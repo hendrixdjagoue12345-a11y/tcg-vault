@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { QuickSearch } from "@/features/catalog/components/quick-search";
 
 export default function HomePage() {
   return (
@@ -66,6 +67,9 @@ export default function HomePage() {
           </article>
         </div>
       </section>
+      <div className="container">
+        <QuickSearch />
+      </div>
     </main>
   );
 }

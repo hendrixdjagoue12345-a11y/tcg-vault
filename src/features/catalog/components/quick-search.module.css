@@ -1,0 +1,70 @@
+.section {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: clamp(4rem, 10vw, 8rem);
+  padding: clamp(1.25rem, 5vw, 3rem);
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgb(17 24 39 / 88%), rgb(24 34 53 / 60%));
+}
+.section h2 {
+  max-width: 16ch;
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  line-height: 1.05;
+}
+.section p {
+  color: var(--muted);
+}
+.section code {
+  color: var(--primary);
+}
+.searchBox {
+  min-width: 0;
+}
+.searchBox label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+.searchBox input {
+  width: 100%;
+  min-height: 3.2rem;
+  padding: 0.75rem 0.9rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.8rem;
+  color: var(--text);
+  background: #090f1a;
+}
+.results {
+  display: grid;
+  margin-top: 0.75rem;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  background: #090f1a;
+}
+.results > p {
+  margin: 0;
+  padding: 1rem;
+}
+.results a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 0.0625rem solid var(--border);
+  text-decoration: none;
+}
+.results a:hover {
+  color: var(--primary);
+  background: var(--surface-soft);
+}
+.results small {
+  color: var(--muted);
+}
+@media (min-width: 52rem) {
+  .section {
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+  }
+}
