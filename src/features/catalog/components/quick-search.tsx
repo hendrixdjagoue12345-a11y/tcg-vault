@@ -32,7 +32,6 @@ export function QuickSearch() {
   useEffect(() => {
     const trimmedQuery = query.trim();
     if (trimmedQuery.length < 2) {
-      setState({ status: "idle", cards: [] });
       return;
     }
 
@@ -88,7 +87,13 @@ export function QuickSearch() {
           id="quick-search"
           type="search"
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => {
+            const nextQuery = event.target.value;
+            setQuery(nextQuery);
+            if (nextQuery.trim().length < 2) {
+              setState({ status: "idle", cards: [] });
+            }
+          }}
           placeholder="Saisissez au moins 2 caractères"
           autoComplete="off"
         />

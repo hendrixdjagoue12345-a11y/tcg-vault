@@ -30,6 +30,8 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    // Hydratation volontaire après montage : localStorage n’existe pas côté serveur.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFavorites(readFavorites(localStorage.getItem(FAVORITES_STORAGE_KEY)));
     setReady(true);
 

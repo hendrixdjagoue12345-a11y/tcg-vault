@@ -67,6 +67,34 @@ export default function HomePage() {
           </article>
         </div>
       </section>
+
+      <section className="container showcase" aria-labelledby="showcase-title">
+        <div>
+          <p className="eyebrow">Sélection rapide</p>
+          <h2 id="showcase-title" className="display-title">
+            Quatre recherches pour commencer.
+          </h2>
+        </div>
+        <div className="showcase__links">
+          <Link href="/catalogue?q=Pikachu">
+            <span>Électrique</span>
+            <strong>Pikachu</strong>
+          </Link>
+          <Link href="/catalogue?q=Dracaufeu">
+            <span>Feu</span>
+            <strong>Dracaufeu</strong>
+          </Link>
+          <Link href="/catalogue?q=Mewtwo">
+            <span>Psy</span>
+            <strong>Mewtwo</strong>
+          </Link>
+          <Link href="/catalogue?q=Evoli">
+            <span>Évolution</span>
+            <strong>Évoli</strong>
+          </Link>
+        </div>
+      </section>
+
       <div className="container">
         <QuickSearch />
       </div>
