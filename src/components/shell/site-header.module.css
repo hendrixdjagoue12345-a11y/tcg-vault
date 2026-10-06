@@ -1,0 +1,95 @@
+.header {
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  border-bottom: 0.0625rem solid rgb(255 255 255 / 8%);
+  background: rgb(8 11 18 / 82%);
+  backdrop-filter: blur(1.2rem);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  min-height: 4.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.brandMark {
+  display: grid;
+  width: 2.25rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 0.65rem;
+  color: #071018;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 1.5rem rgb(103 232 249 / 22%);
+}
+
+.menuButton {
+  padding: 0.65rem 0.8rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.7rem;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.navigation {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 1rem;
+  left: 1rem;
+  display: none;
+  padding: 0.65rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 1rem;
+  background: #101827;
+  box-shadow: 0 1.25rem 3.75rem rgb(0 0 0 / 35%);
+}
+
+.navigation.open {
+  display: grid;
+}
+
+.navigation a {
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.65rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navigation a:hover,
+.navigation a.active {
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+@media (min-width: 48rem) {
+  .menuButton {
+    display: none;
+  }
+
+  .navigation,
+  .navigation.open {
+    position: static;
+    display: flex;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+}
