@@ -258,6 +258,19 @@ h1 {
   margin-top: 1.5rem;
 }
 
+.result-summary {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
 @media (min-width: 48rem) {
   .hero__grid {
     grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);

@@ -1,0 +1,52 @@
+.form {
+  display: grid;
+  gap: 1rem;
+  align-items: end;
+  margin-block: 2.5rem 3rem;
+  padding: 1rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: var(--radius);
+  background: rgb(17 24 39 / 78%);
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.65rem 0.8rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.75rem;
+  color: var(--text);
+  background: #0b111d;
+}
+
+.reset {
+  justify-self: start;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.reset:hover {
+  color: var(--text);
+}
+
+@media (min-width: 48rem) {
+  .form {
+    grid-template-columns: minmax(14rem, 1.5fr) minmax(10rem, 0.8fr) auto auto;
+  }
+
+  .reset {
+    align-self: center;
+  }
+}
