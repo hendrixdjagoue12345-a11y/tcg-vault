@@ -8,26 +8,26 @@ TCG Vault permet de rechercher des cartes Pokémon, de consulter leurs informati
 
 Le projet utilise [TCGdex](https://tcgdex.dev/), une API publique consacrée aux cartes Pokémon TCG.
 
-| Besoin | Endpoint |
-| --- | --- |
-| Catalogue | `GET https://api.tcgdex.net/v2/fr/cards` |
-| Recherche | `GET /v2/fr/cards?name=pikachu` |
-| Catégorie | `GET /v2/fr/cards?category=Pokemon` |
+| Besoin     | Endpoint                                       |
+| ---------- | ---------------------------------------------- |
+| Catalogue  | `GET https://api.tcgdex.net/v2/fr/cards`       |
+| Recherche  | `GET /v2/fr/cards?name=pikachu`                |
+| Catégorie  | `GET /v2/fr/cards?category=Pokemon`            |
 | Pagination | `pagination:page` et `pagination:itemsPerPage` |
-| Fiche | `GET https://api.tcgdex.net/v2/fr/cards/{id}` |
+| Fiche      | `GET https://api.tcgdex.net/v2/fr/cards/{id}`  |
 
 L’API ne demande pas de clé. Les réponses doivent toutefois être mises en cache et le nombre d’appels doit rester raisonnable.
 
 ## Écrans retenus
 
-| Route | Responsabilité |
-| --- | --- |
-| `/` | Présenter le projet et mettre quelques cartes en avant. |
-| `/catalogue` | Rechercher, filtrer et paginer les cartes. |
-| `/catalogue/[id]` | Montrer les informations détaillées d’une carte. |
-| `/favoris` | Afficher la sélection persistée dans le navigateur. |
-| `/preferences` | Démontrer un formulaire et une Server Action. |
-| `/api/cartes` | Démontrer un Route Handler consommé côté client. |
+| Route             | Responsabilité                                          |
+| ----------------- | ------------------------------------------------------- |
+| `/`               | Présenter le projet et mettre quelques cartes en avant. |
+| `/catalogue`      | Rechercher, filtrer et paginer les cartes.              |
+| `/catalogue/[id]` | Montrer les informations détaillées d’une carte.        |
+| `/favoris`        | Afficher la sélection persistée dans le navigateur.     |
+| `/preferences`    | Démontrer un formulaire et une Server Action.           |
+| `/api/cartes`     | Démontrer un Route Handler consommé côté client.        |
 
 ## Critères observables
 
