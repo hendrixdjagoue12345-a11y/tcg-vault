@@ -1,0 +1,92 @@
+.back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  font-weight: 700;
+  text-decoration: none;
+}
+.back:hover {
+  color: var(--primary);
+}
+.layout {
+  display: grid;
+  gap: clamp(2.5rem, 8vw, 6rem);
+  align-items: start;
+}
+.artwork {
+  width: min(100%, 25rem);
+  margin-inline: auto;
+}
+.content h1 {
+  margin-bottom: 1.5rem;
+}
+.lead {
+  max-width: 44rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-block: 2rem;
+  border-top: 0.0625rem solid var(--border);
+}
+.facts div {
+  padding: 1rem 0;
+  border-bottom: 0.0625rem solid var(--border);
+}
+.facts dt {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.facts dd {
+  margin: 0.25rem 0 0;
+  font-weight: 800;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.tags span {
+  padding: 0.4rem 0.7rem;
+  border: 0.0625rem solid rgb(103 232 249 / 25%);
+  border-radius: 999rem;
+  color: var(--primary);
+  background: rgb(103 232 249 / 8%);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+.attacks {
+  margin-top: 2.5rem;
+}
+.attacks article {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem 1rem;
+  padding: 1rem 0;
+  border-top: 0.0625rem solid var(--border);
+}
+.attacks h3,
+.attacks p {
+  margin: 0;
+}
+.attacks article > p {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+.attacks strong {
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+@media (min-width: 56rem) {
+  .layout {
+    grid-template-columns: minmax(18rem, 0.75fr) minmax(0, 1.25fr);
+  }
+  .artwork {
+    position: sticky;
+    top: 7rem;
+  }
+}
