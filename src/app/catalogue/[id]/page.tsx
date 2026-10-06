@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { InteractiveCardArtwork } from "@/features/catalog/components/interactive-card-artwork";
 import { getCard } from "@/features/catalog/service";
+import { FavoriteButton } from "@/features/favorites/favorite-button";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
@@ -51,6 +52,7 @@ export default async function CardPage({ params }: CardPageProps) {
             {card.description ??
               "Cette carte ne possède pas encore de description dans la source de données."}
           </p>
+          <FavoriteButton card={card} />
 
           <dl className={styles.facts}>
             <div>

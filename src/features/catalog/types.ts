@@ -38,4 +38,7 @@ export type CatalogResult = {
   hasNextPage: boolean;
 };
 
-export type FavoriteCard = Pick<CardSummary, "id" | "name" | "imageUrl">;
+export type FavoriteCard = Pick<
+  CardSummary,
+  "id" | "localId" | "name" | "imageUrl"
+>;

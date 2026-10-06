@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/shell/site-footer";
 import { SiteHeader } from "@/components/shell/site-header";
+import { FavoritesProvider } from "@/features/favorites/provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -22,9 +23,11 @@ export default function RootLayout({
         <a className="skip-link" href="#main-content">
           Aller au contenu
         </a>
-        <SiteHeader />
-        {children}
-        <SiteFooter />
+        <FavoritesProvider>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </FavoritesProvider>
       </body>
     </html>
   );

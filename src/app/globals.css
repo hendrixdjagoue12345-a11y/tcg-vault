@@ -264,6 +264,11 @@ h1 {
   font-size: 0.82rem;
 }
 
+.status-message {
+  margin-top: 2rem;
+  color: var(--muted);
+}
+
 .pagination {
   display: flex;
   justify-content: space-between;

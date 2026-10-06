@@ -1,0 +1,33 @@
+.button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.75rem;
+  color: var(--text);
+  background: var(--surface);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.button[aria-pressed="true"] {
+  border-color: rgb(251 191 36 / 40%);
+  color: var(--accent);
+  background: rgb(251 191 36 / 8%);
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.compact {
+  width: 2.5rem;
+  min-height: 2.5rem;
+  padding: 0;
+  border-radius: 999rem;
+  font-size: 1.3rem;
+}
