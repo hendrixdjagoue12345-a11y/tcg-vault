@@ -1,8 +1,9 @@
 "use client";
 
 import { useActionState } from "react";
-import { initialPreferenceState, savePreferences } from "./actions";
+import { savePreferences } from "./actions";
 import type { Preferences } from "./schemas";
+import { initialPreferenceState } from "./state";
 import styles from "./preference-form.module.css";
 
 type PreferenceFormProps = {

@@ -37,3 +37,5 @@ npm audit
 ```
 
 La première commande cible les dépendances exécutées en production. N’utilisez pas `npm audit fix --force` sans analyser les changements majeurs proposés.
+
+Sur la version livrée, `npm run audit:runtime` ne remonte aucune vulnérabilité. L’audit complet signale cinq alertes élevées provenant de `braces` via la chaîne d’outils ESLint de Next.js. La correction forcée proposée rétrograderait `eslint-config-next` vers une version majeure incompatible ; elle n’est donc pas appliquée. Ces alertes concernent l’environnement de développement et non les dépendances embarquées par l’application en production.

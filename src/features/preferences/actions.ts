@@ -3,16 +3,7 @@
 import { cookies } from "next/headers";
 import { revalidatePath } from "next/cache";
 import { preferencesSchema } from "./schemas";
-
-export type PreferenceActionState = {
-  status: "idle" | "success" | "error";
-  message: string;
-};
-
-export const initialPreferenceState: PreferenceActionState = {
-  status: "idle",
-  message: "",
-};
+import type { PreferenceActionState } from "./state";
 
 export async function savePreferences(
   _previousState: PreferenceActionState,
