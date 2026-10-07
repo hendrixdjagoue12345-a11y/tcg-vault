@@ -1,29 +1,20 @@
-export type CardSummary = {
+export type AgentSummary = {
   id: string;
-  localId: string;
   name: string;
+  imageUrl: string | null;
+  role: string | null;
+};
+
+export type AgentAbility = {
+  name: string;
+  description: string;
   imageUrl: string | null;
 };
 
-export type CardAttack = {
-  name: string;
-  cost: string[];
-  damage: string | null;
-  effect: string | null;
-};
-
-export type CardDetail = CardSummary & {
-  category: string;
-  rarity: string | null;
-  illustrator: string | null;
-  hp: number | null;
-  types: string[];
-  description: string | null;
-  set: {
-    id: string;
-    name: string;
-  };
-  attacks: CardAttack[];
+export type AgentDetail = AgentSummary & {
+  description: string;
+  fullPortraitUrl: string | null;
+  abilities: AgentAbility[];
 };
 
 export type CatalogQuery = {
@@ -33,12 +24,12 @@ export type CatalogQuery = {
 };
 
 export type CatalogResult = {
-  items: CardSummary[];
+  items: AgentSummary[];
   page: number;
   hasNextPage: boolean;
 };
 
-export type FavoriteCard = Pick<
-  CardSummary,
-  "id" | "localId" | "name" | "imageUrl"
+export type FavoriteAgent = Pick<
+  AgentSummary,
+  "id" | "name" | "imageUrl" | "role"
 >;
