@@ -2,36 +2,30 @@ import { z } from "zod";
 
 const imageSchema = z.string().url().nullish();
 
-export const cardBriefSchema = z.object({
-  id: z.string().min(1),
-  localId: z.union([z.string(), z.number()]),
-  name: z.string().min(1),
-  image: imageSchema,
+const roleSchema = z.object({
+  uuid: z.string(),
+  displayName: z.string(),
+  description: z.string(),
+  displayIcon: imageSchema,
 });
 
-export const cardBriefListSchema = z.array(cardBriefSchema);
-
-const attackSchema = z.object({
-  name: z.string().min(1),
-  cost: z.array(z.string()).optional().default([]),
-  damage: z.union([z.string(), z.number()]).nullish(),
-  effect: z.string().nullish(),
-});
-
-export const cardDetailSchema = cardBriefSchema.extend({
-  category: z.string().optional().default("Inconnue"),
-  illustrator: z.string().nullish(),
-  rarity: z.string().nullish(),
-  hp: z.union([z.string(), z.number()]).nullish(),
-  types: z.array(z.string()).optional().default([]),
+const abilitySchema = z.object({
+  slot: z.string(),
+  displayName: z.string().nullish(),
   description: z.string().nullish(),
-  effect: z.string().nullish(),
-  set: z.object({
-    id: z.string().min(1),
-    name: z.string().min(1),
-  }),
-  attacks: z.array(attackSchema).optional().default([]),
+  displayIcon: imageSchema,
 });
 
-export type CardBriefDto = z.infer<typeof cardBriefSchema>;
-export type CardDetailDto = z.infer<typeof cardDetailSchema>;
+export const agentSchema = z.object({
+  uuid: z.string().min(1),
+  displayName: z.string().min(1),
+  description: z.string(),
+  displayIcon: imageSchema,
+  fullPortrait: imageSchema,
+  role: roleSchema.nullish(),
+  abilities: z.array(abilitySchema),
+});
+
+export const agentListSchema = z.array(agentSchema);
+
+export type AgentDto = z.infer<typeof agentSchema>;
